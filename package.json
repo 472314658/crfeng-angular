@@ -1,0 +1,13 @@
+{
+  "name": "generator-mdzz",
+  "version": "2.0.5",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^7.1.0",
+    "yeoman-generator": "^4.10.1"
+  },
+  "devDependencies": {
+    "ejs": "^3.1.3"
+  }
+}

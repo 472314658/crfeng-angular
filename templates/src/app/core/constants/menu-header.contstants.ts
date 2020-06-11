@@ -1,0 +1,85 @@
+// tslint:disable-next-line:class-name
+export class MENU_HEADER {
+  static menuList = [
+    {
+      menuId: 1,
+      menuNam: ' ',
+      menuPId: -1,
+      menuPrgNam: '#',
+      menuDes: 'home',
+    }, {
+      menuId: 2,
+      menuNam: '工作台',
+      menuPId: 1,
+      menuPrgNam: '工作台',
+      menuDes: '/welcome/workbench',
+    }, {
+      menuId: 3,
+      menuNam: '客户/联系人',
+      menuPId: 1,
+      menuPrgNam: '客户/联系人',
+      menuDes: '/welcome/customer',
+      menuIcon: 'bank'
+    }, {
+      menuId: 4,
+      menuNam: '渠道',
+      menuPId: 1,
+      menuPrgNam: '渠道',
+      menuDes: '/welcome/channel',
+    }, {
+      menuId: 5,
+      menuNam: '线索',
+      menuPId: 1,
+      menuPrgNam: '线索',
+      menuDes: '/welcome/clue',
+      menuIcon: 'bank'
+    }, {
+      menuId: 6,
+      menuNam: '商机',
+      menuPId: 1,
+      menuPrgNam: '商机',
+      menuDes: '/welcome/business',
+    }, {
+      menuId: 7,
+      menuNam: '合同',
+      menuPId: 1,
+      menuPrgNam: '合同',
+      menuDes: '/welcome/contract',
+    }, {
+      menuId: 8,
+      menuNam: '订单',
+      menuPId: 1,
+      menuPrgNam: '订单',
+      menuDes: '/welcome/order',
+    }, {
+      menuId: 9,
+      menuNam: '产品',
+      menuPId: 1,
+      menuPrgNam: '产品',
+      menuDes: '/welcome/product',
+    }, {
+      menuId: 10,
+      menuNam: '库存',
+      menuPId: 1,
+      menuPrgNam: '库存',
+      menuDes: '/welcome/stock',
+    }, {
+      menuId: 11,
+      menuNam: '回款/应收',
+      menuPId: 1,
+      menuPrgNam: '回款/应收',
+      menuDes: '/welcome/collection',
+    }, {
+      menuId: 12,
+      menuNam: '售后回访',
+      menuPId: 1,
+      menuPrgNam: '售后回访',
+      menuDes: '/welcome/afterSales',
+    }, {
+      menuId: 13,
+      menuNam: '报表',
+      menuPId: 1,
+      menuPrgNam: '报表',
+      menuDes: '/welcome/report',
+    }];
+}

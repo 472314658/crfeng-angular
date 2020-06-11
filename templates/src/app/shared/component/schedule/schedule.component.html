@@ -1,0 +1,25 @@
+<nz-list [nzHeader]="top" >
+  <ng-container>
+    <nz-list-item>
+      今天：1
+      <mark>有事</mark>
+    </nz-list-item>
+  </ng-container>
+  <i nz-icon nzType="up" *ngIf="topNum>0" class="trigger" (click)="showMore(0)"></i>
+  <ng-container *ngFor="let item of data;let i=index">
+    <nz-list-item *ngIf="i>=topNum&&i<=bottomNum">
+      {{ item }}
+      <mark>有事</mark>
+    </nz-list-item>
+  </ng-container>
+  <i nz-icon nzType="down" *ngIf="bottomNum<23" class="trigger" (click)="showMore(1)"></i>
+  <ng-container>
+    <nz-list-item>
+      名天：2
+      <mark>有事</mark>
+    </nz-list-item>
+  </ng-container>
+</nz-list>
+<ng-template #top>
+  <nz-date-picker [(ngModel)]="date" (ngModelChange)="onChange($event)" class="picker-center"></nz-date-picker>
+</ng-template>

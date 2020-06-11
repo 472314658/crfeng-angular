@@ -1,0 +1,25 @@
+<ul nz-menu nzMode="horizontal" class="header-list">
+  <ng-container *ngFor="let menuLv1 of menuShow">
+    <li *ngIf="menuLv1.menuPrgNam !=='#'" nz-menu-item [nzMatchRouter]="true" [routerLink]="menuLv1.menuDes">
+      <i nz-icon nzType="bank"></i>{{menuLv1.menuNam}}
+    </li>
+    <li *ngIf="menuLv1.menuPrgNam ==='#'" nz-submenu [nzTitle]="menuLv1.menuNam" [nzIcon]="menuLv1.menuIcon">
+      <ul>
+        <ng-container *ngFor="let menuLv2 of menuLv1.subMenu">
+          <li *ngIf="menuLv2.menuPrgNam !=='#'" nz-menu-item [nzMatchRouter]="true" [routerLink]="menuLv2.menuDes">
+            <i nz-icon nzType="bank"></i>{{menuLv2.menuNam}}
+          </li>
+          <li *ngIf="menuLv2.menuPrgNam ==='#'" nz-submenu [nzTitle]="menuLv2.menuNam" nzIcon="container">
+            <ul>
+              <ng-container *ngFor="let menuLv3 of menuLv2.subMenu[0]">
+                <li nz-menu-item [nzMatchRouter]="true" [routerLink]="menuLv3.menuDes">
+                  <i nz-icon nzType="bank"></i>{{menuLv3.menuNam}}
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+    </li>
+  </ng-container>
+</ul>

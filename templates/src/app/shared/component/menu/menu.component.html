@@ -1,0 +1,31 @@
+<nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" nzTheme="light">
+  <i class="trigger" nz-icon [nzType]="isCollapsed ? 'right' : 'left'" (click)="changeIsCollapsed()"></i>
+  <ul nz-menu nzMode="inline" nzTheme="light">
+    <ng-container *ngFor="let menuLv1 of menuShow">
+      <li *ngIf="menuLv1.menuPrgNam !=='#'" nz-menu-item [nzMatchRouter]="true" [routerLink]="menuLv1.menuDes">
+        <i nz-icon [nzType]="menuLv1.menuIcon"></i><span *ngIf="!isCollapsed">{{menuLv1.menuNam}}</span>
+      </li>
+      <li *ngIf="menuLv1.menuPrgNam ==='#'" nz-submenu [nzTitle]="menuLv1.menuNam" [nzIcon]="menuLv1.menuIcon"
+          [nzOpen]="true">
+        <ul>
+          <ng-container *ngFor="let menuLv2 of menuLv1.subMenu">
+            <li *ngIf="menuLv2.menuPrgNam !=='#'" nz-menu-item [nzMatchRouter]="true" [routerLink]="menuLv2.menuDes">
+              <i nz-icon [nzType]="menuLv2.menuIcon"></i>{{menuLv2.menuNam}}
+            </li>
+            <li *ngIf="menuLv2.menuPrgNam ==='#'" nz-submenu [nzTitle]="menuLv2.menuNam" nzIcon="container"
+                [nzOpen]="true">
+              <ul>
+                <ng-container *ngFor="let menuLv3 of menuLv2.subMenu[0]">
+                  <li nz-menu-item [nzMatchRouter]="true" [routerLink]="menuLv3.menuDes">
+                    <i nz-icon [nzType]="menuLv3.menuIcon"></i>{{menuLv3.menuNam}}
+                  </li>
+                </ng-container>
+              </ul>
+            </li>
+          </ng-container>
+        </ul>
+      </li>
+    </ng-container>
+  </ul>
+</nz-sider>
+
